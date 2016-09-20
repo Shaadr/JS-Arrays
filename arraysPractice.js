@@ -144,28 +144,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 
-function removeItem(myGroceryList, item) {
-  console.log(myGroceryList, item)
-  if(!myGroceryList || !item || !Array.isArray(myGroceryList)/* || typeOf item === "string"*/) {
-    return [];
-  }
-  for (var i = 0; i < myGroceryList.length; i++) {
-    if (myGroceryList[i] === item) {
-      myGroceryList.splice(i, 1);
+  function removeItem(myGroceryList, item) {
+    console.log(myGroceryList, item)
+    if(!myGroceryList || !item || !Array.isArray(myGroceryList)/* || typeOf item === "string"*/) {
+      return [];
     }
+    for (var i = 0; i < myGroceryList.length; i++) {
+      if (myGroceryList[i] === item) {
+        myGroceryList.splice(i, 1);
+      }
+    }
+    return myGroceryList;
   }
-  return myGroceryList;
-}
 
-function addItem(myGroceryList, item) {
-  if(!myGroceryList && !item) {
-    return [];
-  }
-    if (myGroceryList.indexOf(item) !== 0) {
-      myGroceryList.push(item);
+  function addItem(myGroceryList, item) {
+    if(!myGroceryList && !item) {
+      return [];
     }
-  return myGroceryList;
-}
+      if (myGroceryList.indexOf(item) !== 0) {
+        myGroceryList.push(item);
+      }
+    return myGroceryList;
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -221,11 +221,11 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
-function longer(arr1, arr2) {
-  for (var i = 0; i < arr1.length; i++) {
-    if 
-  }
-}
+// function longer(arr1, arr2) {
+//   for (var i = 0; i < arr1.length; i++) {
+//     if
+//   }
+// }
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -273,14 +273,21 @@ var colt = {
 /*Above you're given an empty array with four objects. Fill the devMountainEmployees
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
 
-  //Code Here
-
+console.log(devMountainEmployees.length);
+console.log(devMountainEmployees);
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
-
+  for(var i = 0; i < devMountainEmployees.length; i++) {
+    if(devMountainEmployees[i].name === 'Cahlan'){
+      devMountainEmployees.splice(i, 1);
+    }
+  }
 
 
 
@@ -321,7 +328,7 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -332,7 +339,36 @@ var user1 = {
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-};
+  };
+
+var user2 = {
+    name: 'Joe McLovin',
+    email: 'JMcL@gmail.com',
+    password: 'thepassword',
+    username: 'theusername'
+  };
+
+var user3 = {
+    name: 'Adam Family',
+    email: 'afam@gmail.com',
+    password: 'deathbecomesusall',
+    username: 'the_reaper'
+  };
+
+var user4 = {
+    name: 'Batman',
+    email: 'imbatman@batshtcrazy.com',
+    password: 'batman',
+    username: 'I"m'
+  };
+
+  users.push(user1);
+  users.push(user2);
+  users.push(user3);
+  users.push(user4);
+
+console.log(users);
+
 
 //Your Code Here
 
@@ -345,5 +381,11 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+  for(var i = 0; i < users.length; i++) {
+      if (users[i].email === 'tylermcginnis33@gmail.com') {
+        users.splice(i,1);
+      }
+    }
 
+  console.log(users);
 //The activity we just did is very much how data works in 'the real world'.
